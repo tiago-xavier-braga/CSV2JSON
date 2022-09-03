@@ -6,14 +6,21 @@ mrugesh, 4, ice cream`;
 
 var lines = inputCsv.split(/[\n\r]+/);
 var itens = [];
-var person = { Array: [{}] };
+var control = "";
+var db = { Array: [] };
 
 for (let i = 0; i < lines.length; i++) {
   itens.push(lines[i].split(", "));
 }
-
-for (let j = 0; j < lines.length; j++) {
-    
+for (let i = 1; i < lines.length; i++) {
+  control = "";
+  for (let j = 0; j < itens[0].length; j++) {
+    var index = Number(itens[i][j]);
+    if (Number.isNaN(index)) {
+      control += `"${itens[0][j]}": "${itens[i][j]}", `;
+    } else {
+      control += `"${itens[0][j]}": ${itens[i][j]}, `;
+    }
+  }
+  db.Array.push(`{${control}}`);
 }
-
-console.log(person);
