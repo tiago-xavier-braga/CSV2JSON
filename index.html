@@ -8,8 +8,20 @@
     <title>CSV2JSON</title>
 </head>
 <body>
-    
-
+    <header>
+        <h1>CSV2JSON</h1>
+    </header>
+    <main>
+        <div class="box">
+            <textarea type="textarea" name="csv" id="csvInput" class="inputText"></textarea>
+        </div>
+        <div class="boxButton">
+            <input type="button" value="JSON" class="btnConvert" onclick="main()">
+        </div>
+        <div class="box">
+            <textarea type="textarea" name="json" id="jsonInput" class="inputText" disabled></textarea>
+        </div>
+    </main>
     <script src="./app.js"></script>
 </body>
 </html>
